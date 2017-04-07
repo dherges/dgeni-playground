@@ -4,5 +4,12 @@
   "private": true,
   "repository": "https://github.com/dherges/dgeni-playground.git",
   "author": "david <david@spektrakel.de",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "docs": "yarn run dgeni ./tools/dgeni/docs"
+  },
+  "devDependencies": {
+    "dgeni": "^0.4.7",
+    "dgeni-packages": "^0.17.1"
+  }
 }
