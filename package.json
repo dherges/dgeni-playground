@@ -1,0 +1,8 @@
+{
+  "name": "dgeni-playground",
+  "version": "0.0.0",
+  "private": true,
+  "repository": "https://github.com/dherges/dgeni-playground.git",
+  "author": "david <david@spektrakel.de",
+  "license": "MIT"
+}
