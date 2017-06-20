@@ -1,3 +1,5 @@
+@title foobar!
+
 # Things to keep in mind
 
 > Hello again
@@ -12,3 +14,5 @@ foo.foo('bar');
 ### Great!
 
 It works!
+
+{@inline foo bar}

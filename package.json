@@ -6,10 +6,10 @@
   "author": "david <david@spektrakel.de",
   "license": "MIT",
   "scripts": {
-    "docs": "yarn run dgeni ./tools/dgeni/docs"
+    "docs": "dgeni ./tools/dgeni/docs"
   },
   "devDependencies": {
-    "dgeni": "^0.4.7",
+    "dgeni": "^0.4.9",
     "dgeni-packages": "^0.17.1"
   }
 }

@@ -9,12 +9,14 @@ const path = require('path');
 
 const basePackage = require('dgeni-packages/base');
 const nunjucksPackage = require('dgeni-packages/nunjucks');
+const jsdocPackage = require('dgeni-packages/jsdoc');
 
 
 
 const DOCS_PACKAGE = new DgeniPackage('my-docs-package', [
   basePackage,
-  nunjucksPackage
+  nunjucksPackage,
+  jsdocPackage
 ])
 
 .processor(require('./processors/samplesFileReader'))
@@ -80,5 +82,21 @@ const DOCS_PACKAGE = new DgeniPackage('my-docs-package', [
     '${ doc.docType }.template.json'
   ];
 })
+
+.config(function (parseTagsProcessor, getInjectables) {
+
+  parseTagsProcessor.tagDefinitions = parseTagsProcessor.tagDefinitions.concat(
+    getInjectables([require('./tag-defs/title.js')])
+  );
+
+})
+.factory(require('./inline-tag-defs/inline'))
+.config(function (inlineTagProcessor, inlineTagDef) {
+  inlineTagProcessor.inlineTagDefinitions.push(
+    inlineTagDef
+  );
+})
+
+
 
 module.exports = DOCS_PACKAGE
